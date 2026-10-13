@@ -1,0 +1,18 @@
+name: Validar contenido
+on:
+  pull_request:
+    paths: ['pages/**']
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pyyaml
+      - name: Validar artículos modificados
+        run: |
+          git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD -- 'pages/**/item*.md' > cambiados.txt
+          cat cambiados.txt
+          python .github/scripts/validar.py $(cat cambiados.txt)

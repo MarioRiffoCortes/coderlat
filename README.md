@@ -1,21 +1,15 @@
-# coderlat
-La comunidad open source hecha en Latinoamérica para devs que construyen con herramientas libres.
+# coderLAT — contenido de la comunidad
 
-## Preferimos comprender antes que depender.
-## Entendemos el software que usamos.
-Implementamos open source en entornos empresariales reales, con la responsabilidad que eso exige. Elegimos herramientas que podemos leer, modificar y sostener en el tiempo, porque en producción cada decisión tiene consecuencia.
+Soluciones, skills, automatizaciones y guías hechas en Latinoamérica. Todo lo que se publica en el sitio sale de este repositorio.
 
-Cada implementación deja algo detrás: una integración resuelta, una arquitectura que sostuvo el crecimiento, un criterio que evitó una dependencia innecesaria. Ese conocimiento es nuestro activo más valioso, y esta comunidad existe para conservarlo y ponerlo a disposición de quien lo necesite después.
+**¿Quieres publicar?** Lee [CONTRIBUTING.md](CONTRIBUTING.md). Si no usas git, abre un [Issue "Proponer solución"](../../issues/new/choose) y lo convertimos en artículo.
 
-Usamos IA, usamos la nube, usamos lo que funciona — evaluado desde el criterio de cada proyecto, no desde la comodidad de la primera opción. Si implementas open source para empresas y este criterio te resuena, este es tu espacio.
+**Comentarios:** cada artículo del sitio tiene su hilo en [Discussions](../../discussions) (vía Giscus, login con GitHub).
 
-### Nuestros Pilares
-#### Documentar lo que funciona
-Útil para alguien más.
+## Estructura
 
-#### Open source como base
-Enfoque en la solución, no en la licencia.
-
-#### Comunidad
-Conocimiento colectivo.
-
+```
+pages/02.blog/<slug>/item.es.md   # un artículo por carpeta
+templates/articulo/               # plantilla para copiar
+.github/                          # plantillas y validación automática
+```

@@ -1,0 +1,36 @@
+name: Proponer solución
+description: Cuéntanos tu solución y la convertimos en artículo (sin usar git).
+title: "[Solución] "
+labels: ["propuesta"]
+body:
+  - type: input
+    id: titulo
+    attributes: {label: Título, placeholder: "Ej: Cobranza automática por WhatsApp con n8n"}
+    validations: {required: true}
+  - type: dropdown
+    id: recurso
+    attributes:
+      label: Tipo
+      options: [Skill, Plantilla, Tutorial, Glosario, Automatización, Otro]
+    validations: {required: true}
+  - type: input
+    id: herramienta
+    attributes: {label: Herramienta principal, placeholder: "n8n, EspoCRM, Claude…"}
+    validations: {required: true}
+  - type: input
+    id: pais
+    attributes: {label: País}
+    validations: {required: true}
+  - type: textarea
+    id: contenido
+    attributes:
+      label: Contenido
+      description: Explica el problema, los pasos y el resultado. Puedes pegar Markdown, enlaces e imágenes.
+    validations: {required: true}
+  - type: checkboxes
+    id: terminos
+    attributes:
+      label: Confirmo que
+      options:
+        - label: El contenido es mío o tengo permiso para compartirlo, y no incluye datos sensibles.
+          required: true
