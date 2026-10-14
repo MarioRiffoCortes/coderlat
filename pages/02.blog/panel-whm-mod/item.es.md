@@ -10,17 +10,17 @@ metadata:
     description: 'Crea un panel PHP que lista, suspende y cambia claves de cuentas cPanel en varios servidores WHM vía API, con caché diaria y validación de DNS en Nic.cl.'
 faq:
     -
-        question: '¿Necesito acceso root para usar la API de WHM?'
-        answer: 'Necesitas un usuario root o reseller con un API Token creado en WHM (Development » Manage API Tokens). Un reseller solo verá y podrá modificar sus propias cuentas.'
+        q: '¿Necesito acceso root para usar la API de WHM?'
+        a: 'Necesitas un usuario root o reseller con un API Token creado en WHM (Development » Manage API Tokens). Un reseller solo verá y podrá modificar sus propias cuentas.'
     -
-        question: '¿Por qué validar los DNS con el WHOIS de Nic.cl y no con dns_get_record()?'
-        answer: 'dns_get_record() pregunta a los servidores de nombres del propio dominio, que pueden seguir respondiendo con NS antiguos. El WHOIS de whois.nic.cl devuelve lo que está registrado en NIC Chile, que es lo que de verdad manda.'
+        q: '¿Por qué validar los DNS con el WHOIS de Nic.cl y no con dns_get_record()?'
+        a: 'dns_get_record() pregunta a los servidores de nombres del propio dominio, que pueden seguir respondiendo con NS antiguos. El WHOIS de whois.nic.cl devuelve lo que está registrado en NIC Chile, que es lo que de verdad manda.'
     -
-        question: '¿Cada cuánto se actualiza el listado de cuentas?'
-        answer: 'Una vez al día por servidor: la primera consulta del día llama a WHM y guarda un JSON en caché. El botón de recarga fuerza una nueva consulta con el parámetro force=1.'
+        q: '¿Cada cuánto se actualiza el listado de cuentas?'
+        a: 'Una vez al día por servidor: la primera consulta del día llama a WHM y guarda un JSON en caché. El botón de recarga fuerza una nueva consulta con el parámetro force=1.'
     -
-        question: '¿Puedo usarlo con dominios con tildes o ñ?'
-        answer: 'Sí. WHM devuelve esos dominios en Punycode (xn--) y el panel los convierte a UTF-8 para mostrarlos, y de vuelta a ASCII antes de consultar la API o el WHOIS.'
+        q: '¿Puedo usarlo con dominios con tildes o ñ?'
+        a: 'Sí. WHM devuelve esos dominios en Punycode (xn--) y el panel los convierte a UTF-8 para mostrarlos, y de vuelta a ASCII antes de consultar la API o el WHOIS.'
 sources:
     -
         title: 'Repositorio mod-whm (código completo)'
@@ -100,7 +100,7 @@ Ahí defines `$USERS` como `usuario => contraseña`. Más abajo explico por qué
 
 ```bash
 curl -I https://tu-dominio.com/mod-whm/ADM/config.php
-# Debe responder 403 Forbidden
+## Debe responder 403 Forbidden
 ```
 
 Si responde 200, tu servidor no está leyendo los `.htaccess` (revisa `AllowOverride`) y estarías exponiendo los tokens.
