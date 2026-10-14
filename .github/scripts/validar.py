@@ -33,6 +33,18 @@ for f in sys.argv[1:]:
         for v in (vals if isinstance(vals, list) else [vals]):
             if not SLUG.match(str(v)):
                 err(f, f"taxonomy.{t}: '{v}' debe ir en minúsculas, sin tildes ni espacios")
+    desc = ((fm.get("metadata") or {}).get("description") or "").strip()
+    if not desc: err(f, "falta metadata.description (70-160 caracteres)")
+    elif not 70 <= len(desc) <= 165: err(f, f"metadata.description mide {len(desc)} caracteres; debe tener entre 70 y 160")
+    if not (0 < len(str(fm.get("title", ""))) <= 70): err(f, "el título debe tener entre 1 y 70 caracteres")
+    faq = fm.get("faq")
+    if faq:
+        if not isinstance(faq, list) or any(not isinstance(i, dict) or not i.get("q") or not i.get("a") for i in faq):
+            err(f, "faq debe ser una lista de pares q/a completos")
+    body = txt.split("---", 2)[-1]
+    if re.search(r"^# [^#]", body, re.M): err(f, "no uses '# ' (H1) en el texto: el título ya es el H1; empieza en '## '")
+    if not re.search(r"^## ", body, re.M): err(f, "usa al menos un encabezado '## ' para estructurar el artículo")
+    if re.search(r"!\[\s*\]\(", body): err(f, "hay imágenes sin texto alternativo: usa ![descripción](archivo.png)")
     if not p.parent.name or not SLUG.match(p.parent.name):
         err(f, f"la carpeta '{p.parent.name}' debe ser un slug en minúsculas con guiones")
     if len(txt.split("---", 2)[-1].strip()) < 200:

@@ -17,10 +17,24 @@ taxonomy:
     tool: [n8n]               # herramienta principal, en minúsculas
     resource: [tutorial]      # skill, plantilla, tutorial, glosario, automatizacion, ...
     country: [mexico]         # país de origen, sin tildes, en minúsculas
+metadata:
+    description: 'Resumen de 70 a 160 caracteres'
 ---
 ```
 
 Las etiquetas van en minúsculas y sin tildes para que los filtros del sitio no se dupliquen (`n8n` y `N8N` serían filtros distintos).
+
+## Escribe para buscadores y para IA (SEO · AEO · GEO)
+
+- **Título** claro, de hasta ~60 caracteres, con la palabra clave al inicio.
+- **`metadata.description`**: 70–160 caracteres. Es lo que se ve en Google, en redes y en la discusión de comentarios.
+- **Primer párrafo = respuesta.** Resuelve el problema en 2–3 frases antes de explicar el contexto.
+- **Estructura:** empieza en `##` (el título ya es el H1), usa `###` para subtemas, listas y tablas cuando comparas cosas.
+- **`faq`**: 2–4 preguntas reales con respuestas de 1–3 frases, que se entiendan sin leer el resto.
+- **`sources`**: enlaza documentación oficial y datos que respalden lo que afirmas; las IA citan fuentes verificables.
+- **Imágenes** con texto alternativo descriptivo (`![Qué muestra](archivo.png)`).
+- **Experiencia propia:** cuenta qué probaste, en qué versión y qué resultado obtuviste. Eso diferencia tu artículo.
+- Actualiza `updated: 'dd-mm-aaaa hh:mm'` cuando revises el contenido.
 
 ## Criterios editoriales
 
