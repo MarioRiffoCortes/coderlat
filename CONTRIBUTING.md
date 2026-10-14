@@ -1,4 +1,4 @@
-# Cómo publicar en coderlat
+# Cómo publicar en Coderlat
 
 1. Haz **fork** de este repositorio.
 2. Copia `templates/articulo/` a `pages/02.blog/<slug-de-tu-articulo>/` (slug en minúsculas, sin tildes, con guiones).
