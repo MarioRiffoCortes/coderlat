@@ -1,4 +1,4 @@
-# coderLAT — contenido de la comunidad
+# Coderlat — contenido de la comunidad
 
 Soluciones, skills, automatizaciones y guías hechas en Latinoamérica. Todo lo que se publica en el sitio sale de este repositorio.
 
